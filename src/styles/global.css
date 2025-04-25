@@ -1,0 +1,54 @@
+@import "tailwindcss";
+/* src/styles/global.css */
+/* src/styles/global.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* in global.css (below your @tailwind directives) */
+.light-theme {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* then undo the inversion on images and videos so they look normal */
+.light-theme img,
+.light-theme video {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Default (light) theme */
+
+.footer {
+  @apply bg-black text-gray-400 py-12 mt-24;
+}
+
+.footer-container {
+  @apply max-w-7xl mx-auto px-6;
+}
+
+.footer-columns {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-10 mb-8;
+}
+
+.footer-col {
+  @apply flex flex-col gap-2;
+}
+
+.footer-heading {
+  @apply text-sm font-semibold text-white mb-2;
+}
+
+.footer-links li {
+  @apply text-sm hover:text-white transition;
+}
+
+.footer-bottom {
+  @apply border-t border-gray-800 pt-6 text-center;
+}
+
+
+
+  @import './hotyoga.css';

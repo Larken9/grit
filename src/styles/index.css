@@ -1,0 +1,146 @@
+/* index.css */
+@import "tailwindcss";
+
+
+
+.feature-card {
+    @apply relative rounded-xl overflow-hidden min-h-[460px];
+  }
+  
+  .feature-img {
+    @apply object-cover w-full h-full transition-transform duration-300 group-hover:scale-105;
+  }
+  
+  .feature-overlay {
+    @apply absolute inset-0 bg-black/30 group-hover:bg-black/60 transition duration-300;
+  }
+  
+  .feature-text {
+    @apply absolute bottom-4 left-4 text-white text-lg font-semibold;
+  }
+  
+  .feature-icon {
+    @apply absolute bottom-4 right-4 text-white text-xl;
+  }
+  
+  .feature-description {
+    @apply absolute top-4 left-4 text-white space-y-2 text-sm;
+  }
+  
+  .feature-button {
+    @apply mt-2 px-4 py-1 border border-white text-white rounded-full text-xs;
+  }
+
+  .feature-title {
+    @apply absolute bottom-4 left-4 text-white text-2xl font-bold z-10;
+  }
+  
+  .feature-description {
+    @apply absolute inset-0 flex flex-col justify-center px-4 text-white text-sm space-y-2
+           opacity-0 group-hover:opacity-100 transition duration-300 z-20;
+  }
+  
+  .feature-button {
+    @apply mt-2 px-4 py-1 border border-white text-white rounded-full text-xs;
+  }
+  
+
+  /* MEMBERSHIP CARDS */
+  .membership-section {
+    @apply bg-black text-white pt-20 pb-8 px-4; /* 🔧 reduced bottom padding */
+  }
+  
+  
+  .membership-title {
+    @apply text-center text-4xl font-bold mb-20;
+  }
+  
+  
+  .membership-grid {
+    @apply max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8;
+  }
+  
+  .membership-card {
+    @apply bg-[#111111] text-white p-8 rounded-2xl shadow-lg flex flex-col justify-between 
+           min-h-[480px] w-full md:w-[95%] transition-all duration-300 hover:-translate-y-2 hover:border hover:border-[#4b1f1f] hover:shadow-xl;
+  }
+  
+  
+  
+  .membership-card-highlight {
+    @apply bg-white text-black border border-neutral-300 shadow-xl relative
+           transition-all duration-300 hover:-translate-y-2 hover:border-[#4b1f1f];
+  }
+  
+  
+  .membership-button-white {
+    @apply border-[#000000] text-[#4b1f1f] hover:bg-[#4b1f1f] hover:text-white transition;
+  }
+  
+  .membership-tag {
+    @apply absolute top-4 right-4 bg-[#4b1f1f] text-white text-xs px-3 py-1 rounded-full font-medium;
+  }
+  
+  
+  
+  .membership-heading {
+    @apply text-xl font-serif font-semibold mb-4;
+  }
+  
+  .membership-description {
+    @apply text-sm font-serif leading-relaxed mb-6;
+  }
+  
+  
+  .membership-price {
+    @apply text-lg font-bold;
+  }
+  
+  .membership-button {
+    @apply inline-block text-sm font-semibold px-4 py-2 border rounded-full transition;
+  }
+  
+  .membership-button-black {
+    @apply border-white text-white hover:bg-white hover:text-black;
+  }
+  
+  
+  .membership-button-white {
+    @apply border-white text-white hover:bg-white hover:text-red-600;
+  }
+  
+  .membership-button-highlight {
+    @apply border-black text-black hover:bg-black hover:text-white
+           rounded-full transition hover:shadow-md;
+  }
+  
+
+  .footer {
+    @apply bg-black text-gray-400 py-12 mt-0 pt-30; 
+  }
+  
+  
+  .footer-container {
+    @apply max-w-7xl mx-auto px-6;
+  }
+  
+  .footer-columns {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-10 mb-8;
+  }
+  
+  .footer-col {
+    @apply flex flex-col gap-2;
+  }
+  
+  .footer-heading {
+    @apply text-sm font-semibold text-white mb-2;
+  }
+  
+  .footer-links li {
+    @apply text-sm hover:text-white transition;
+  }
+  
+  .footer-bottom {
+    @apply border-t border-gray-800 pt-6 text-center;
+  }
+  

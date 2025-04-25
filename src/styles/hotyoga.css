@@ -1,0 +1,129 @@
+/* === Hero Section === */
+.hotyoga-hero {
+    @apply relative h-[70vh] w-full overflow-hidden;
+  }
+  .hotyoga-hero img {
+    @apply absolute w-full h-full object-cover;
+  }
+  /* full-cover overlay */
+  .hotyoga-hero-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* === Description Section === */
+  .hotyoga-description {
+    background-color: #000;
+    color: #fff;
+    @apply py-16 px-6 max-w-4xl mx-auto text-center space-y-6;
+  }
+  
+  /* === Benefits Grid === */
+  .hotyoga-benefits {
+    background-color: #000;
+    color: #fff;
+    @apply py-12 px-6;
+  }
+  .hotyoga-benefits-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto;
+  }
+  .hotyoga-benefit-card {
+    @apply bg-neutral-900 p-6 rounded-lg hover:shadow-md transition;
+  }
+  .hotyoga-benefit-card h3 {
+    @apply text-lg font-semibold mb-2;
+  }
+  .hotyoga-benefit-card p {
+    @apply text-sm text-gray-400;
+  }
+  
+  /* === CTA Section === */
+  .hotyoga-cta {
+    background-color: #000;
+    color: #fff;
+    @apply py-16 px-6 text-center;
+  }
+  .hotyoga-cta a {
+    @apply inline-block border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition;
+  }
+  
+  /* === Meet the Trainers Section === */
+  .trainers-section {
+    background-color: #000;
+    color: #fff;
+    @apply py-16 px-6;
+  }
+  .trainers-title {
+    @apply text-3xl font-bold text-center mb-12;
+  }
+  .trainers-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto;
+  }
+  .trainer-card {
+    /* group is applied in markup, not via @apply */
+    @apply relative overflow-hidden rounded-lg aspect-square;
+  }
+  .trainer-img {
+    @apply w-full h-full object-cover transition-transform duration-300 group-hover:scale-105;
+  }
+  .trainer-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @apply opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .trainer-info {
+    @apply absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .trainer-name {
+    @apply text-lg font-semibold;
+  }
+  .trainer-role {
+    @apply text-sm text-gray-300 mt-1;
+  }
+  
+  /* === Trainers Carousel Enhancements === */
+
+/* Wrapper around the scroll container + arrows */
+.trainers-wrapper {
+    @apply flex items-center;       /* make this a flex row, centered vertically */
+  }
+  
+  /* Left & right arrow buttons */
+  .carousel-button {
+    @apply p-2 text-white bg-black/50 rounded-full z-10 hover:bg-black/70;
+  }
+  .carousel-button-left {
+    @apply mr-4;                    /* space from the container on left */
+  }
+  .carousel-button-right {
+    @apply ml-4;                    /* space from the container on right */
+  }
+  
+  /* Horizontal scroll container fills remaining space */
+  .trainers-container {
+    @apply flex-1 flex space-x-6 overflow-x-auto snap-x snap-mandatory py-4;
+    -ms-overflow-style: none;       /* hide scrollbar Edge */
+    scrollbar-width: none;          /* hide scrollbar Firefox */
+  }
+  .trainers-container::-webkit-scrollbar {
+    display: none;                  /* hide scrollbar Chrome/Safari */
+  }
+  
+  /* Double-size square cards */
+  .trainer-card {
+    @apply flex-none w-64 md:w-96 aspect-square rounded-lg overflow-hidden snap-start transition-transform duration-300;
+  }
+  .trainer-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  

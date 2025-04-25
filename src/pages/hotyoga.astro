@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <!-- HERO SECTION -->
+  <section class="hotyoga-hero">
+    <img src="/images/hero-yoga.webp" alt="Hot Yoga Class" />
+    <div class="hotyoga-hero-overlay"></div>
+    <div
+        class="absolute bottom-0 left-0 w-full h-32
+        bg-gradient-to-b from-transparent to-black
+        pointer-events-none"
+        ></div>
+    <div class="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center text-center text-white px-4">
+      <h1 class="text-5xl md:text-6xl font-bold">Hot Yoga</h1>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION -->
+  <!-- DESCRIPTION (full-width black bg) -->
+  <section class="bg-black text-white py-16">
+       <div class="max-w-4xl mx-auto px-6 hotyoga-description">
+         <p class="text-4xl leading-relaxed">
+          Experience the heat, the flow, and the intensity of our instructor-led hot yoga classes.
+         </p>
+        <p class="text-xl text-gray-400">
+           Whether you're new to yoga or a seasoned yogi, our sessions are designed to challenge your body
+           and relax your mind — all in a studio heated to perfection.
+         </p>
+      </div>
+     </section>
+
+  <!-- BENEFITS GRID -->
+  <section class="hotyoga-benefits">
+    <div class="hotyoga-benefits-grid">
+      <div class="hotyoga-benefit-card">
+        <h3>Increased Flexibility</h3>
+        <p>Heat helps loosen muscles and improve your range of motion.</p>
+      </div>
+      <div class="hotyoga-benefit-card">
+        <h3>Detoxification</h3>
+        <p>Sweat it out — our hot yoga studio promotes full-body detox through movement.</p>
+      </div>
+      <div class="hotyoga-benefit-card">
+        <h3>Stress Relief</h3>
+        <p>Leave the chaos at the door and reset your nervous system through breath and stillness.</p>
+      </div>
+    </div>
+  </section>
+  
+    <!-- MEET THE TRAINERS (Carousel Version) -->
+    <section class="trainers-section">
+      <h2 class="trainers-title">Meet the Trainers</h2>
+  
+      <div class="trainers-wrapper">
+        <!-- LEFT ARROW -->
+        <button
+          class="carousel-button carousel-button-left"
+          onclick="scrollTrainers(-1)"
+          aria-label="Scroll left"
+        >‹</button>
+  
+        <!-- SCROLLING CONTAINER -->
+        <div class="trainers-container" id="trainers-carousel">
+          <!-- Trainer 1 -->
+          <div class="trainer-card group">
+            <img src="/images/yoga-trainer-1.jpg" alt="Alex Smith" class="trainer-img" />
+            <div class="trainer-overlay"></div>
+            <div class="trainer-info">
+              <p class="trainer-name">Alex Smith</p>
+              <p class="trainer-role">Hot Yoga Instructor</p>
+            </div>
+          </div>
+          <!-- Trainer 2 -->
+          <div class="trainer-card group">
+            <img src="/images/yoga-trainer-2.jpeg" alt="Jordan Lee" class="trainer-img" />
+            <div class="trainer-overlay"></div>
+            <div class="trainer-info">
+              <p class="trainer-name">Jordan Lee</p>
+              <p class="trainer-role">Senior Yogi</p>
+            </div>
+          </div>
+          <!-- Trainer 3 -->
+          <div class="trainer-card group">
+            <img src="/images/yoga-trainer-3.jpeg" alt="Taylor Green" class="trainer-img" />
+            <div class="trainer-overlay"></div>
+            <div class="trainer-info">
+              <p class="trainer-name">Taylor Green</p>
+              <p class="trainer-role">Yoga & Meditation Coach</p>
+            </div>
+          </div>
+          <!-- Trainer 4 -->
+          <div class="trainer-card group">
+            <img src="/images/yoga-trainer-4.jpeg" alt="Riley Cho" class="trainer-img" />
+            <div class="trainer-overlay"></div>
+            <div class="trainer-info">
+              <p class="trainer-name">Riley Cho</p>
+              <p class="trainer-role">Flexibility Specialist</p>
+            </div>
+          </div>
+          <!-- Trainer 5 -->
+          <div class="trainer-card group">
+            <img src="/images/yoga-trainer-5.jpeg" alt="Morgan Lee" class="trainer-img" />
+            <div class="trainer-overlay"></div>
+            <div class="trainer-info">
+              <p class="trainer-name">Morgan Lee</p>
+              <p class="trainer-role">Yoga & Wellness Coach</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- RIGHT ARROW -->
+        <button
+          class="carousel-button carousel-button-right"
+          onclick="scrollTrainers(1)"
+          aria-label="Scroll right"
+        >›</button>
+      </div>
+    </section>
+  
+    <!-- Scrolling script -->
+    <script>
+      function scrollTrainers(direction) {
+        const container = document.getElementById('trainers-carousel');
+        if (!container) return;
+        const scrollAmount = container.clientWidth * 0.8;
+        container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+      }
+      window.scrollTrainers = scrollTrainers;
+    </script>
+  
+    <!-- CTA SECTION -->
+    <section class="hotyoga-cta">
+      <h2 class="text-3xl font-bold mb-4">Ready to turn up the heat?</h2>
+      <p class="text-md text-gray-400 mb-6">
+        Book a session today and discover the benefits of hot yoga with GritSC.
+      </p>
+      <a href="#join">Book Now</a>
+    </section>
+  </BaseLayout>
+  
+</BaseLayout>

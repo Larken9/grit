@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/index.css';
+---
+<BaseLayout>
+  <!-- HERO SECTION -->
+  <section class="relative h-screen w-full overflow-hidden">
+    <!-- Background image -->
+    <img
+      src="/images/hero.webp"
+      alt="Athlete training"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+
+    <!-- Optional dark overlay for contrast -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- Centered headline -->
+    <div
+      class="absolute inset-0 flex flex-col items-center justify-center text-white
+             text-center px-4"
+    >
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif pb-6">
+        Stronger <span class="italic">Every Day</span>
+      </h1>
+      <h2 class="text-xl font-serif">
+        24/7 | Hot Yoga | Sauna | Personal Training  
+      </h2>
+    </div>
+    <!-- Bottom gradient fade -->
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black z-10"></div>
+
+
+    <!-- Scroll-down arrow -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <svg
+        class="w-8 h-8 animate-bounce text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>   
+    </div>
+  </section>
+
+  <section class="bg-black text-white text-center px-6 py-20">
+    <div class="max-w-3xl mx-auto space-y-6 font-serif text-xl leading-relaxed">
+      <p>
+        GRIT began as a training space for local athletes pushing for an edge—and it's grown into something more. Our 6,800 sq. ft. state-of-the-art facility, opened in late 2021, offers a unique blend of training, yoga, fitness, and wellness. 
+      </p>
+      <p>
+        Whether you're chasing peak performance or just starting your fitness journey, GRIT is here to help you move, grow, and thrive.
+      </p>
+    </div>
+  
+    <!-- BUTTONS -->
+    <div class="mt-10 flex justify-center gap-4 flex-wrap">
+      <a
+        href="#"
+        class="px-6 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-100 transition"
+      >
+        VIEW CLASSES
+      </a>
+      <a
+        href="#"
+        class="px-6 py-2 border border-white text-sm font-semibold rounded-full hover:bg-white hover:text-black transition"
+      >
+        BECOME A MEMBER
+      </a>
+    </div>
+  </section>
+  
+
+  <section class="bg-black py-16">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- CARD 1 -->
+      <div class="feature-card group">
+        <img src="/images/personaltraining.webp" alt="Exclusive classes" class="feature-img" />
+        <div class="feature-overlay"></div>
+      
+        <!-- HIDDEN CONTENT -->
+        <div class="feature-description opacity-0 group-hover:opacity-100 transition duration-300">
+          <p>However you like to train, award-winning classes await.</p>
+          <p>Unlimited access to over 100 classes at each club, every week.</p>
+          <button class="feature-button">CLASSES</button>
+        </div>
+      
+        <!-- ALWAYS VISIBLE TITLE -->
+        <div class="feature-title">Personal Training</div>
+      </div>
+      
+      <!-- CARD 2 -->
+      <div class="feature-card group">
+        <img src="/images/fitnessclasses.webp" alt="Fitness classes" class="feature-img" />
+        <div class="feature-overlay"></div>
+      
+        <!-- HIDDEN CONTENT -->
+        <div class="feature-description opacity-0 group-hover:opacity-100 transition duration-300">
+          <p>However you like to train, award-winning classes await.</p>
+          <p>Unlimited access to over 100 classes at each club, every week.</p>
+          <button class="feature-button">CLASSES</button>
+        </div>
+      
+        <!-- ALWAYS VISIBLE TITLE -->
+        <div class="feature-title">Group Training</div>
+      </div>
+      <!-- CARD 2 -->
+      <div class="feature-card group">
+        <img src="/images/hot-yoga.webp" alt="Fitness classes" class="feature-img" />
+        <div class="feature-overlay"></div>
+      
+        <!-- HIDDEN CONTENT -->
+        <div class="feature-description opacity-0 group-hover:opacity-100 transition duration-300">
+          <p>However you like to train, award-winning classes await.</p>
+          <p>Unlimited access to over 100 classes at each club, every week.</p>
+          <button class="feature-button">CLASSES</button>
+        </div>
+      
+        <!-- ALWAYS VISIBLE TITLE -->
+        <div class="feature-title">Hot Yoga</div>
+      </div>
+  
+      <!-- CARD 2 -->
+      <div class="feature-card group">
+        <img src="/images/nutrition.webp" alt="Fitness classes" class="feature-img" />
+        <div class="feature-overlay"></div>
+      
+        <!-- HIDDEN CONTENT -->
+        <div class="feature-description opacity-0 group-hover:opacity-100 transition duration-300">
+          <p>However you like to train, award-winning classes await.</p>
+          <p>Unlimited access to over 100 classes at each club, every week.</p>
+          <button class="feature-button">CLASSES</button>
+        </div>
+      
+        <!-- ALWAYS VISIBLE TITLE -->
+        <div class="feature-title">Nutrition</div>
+      </div>
+      
+      <!-- ...repeat for other cards with same structure... -->
+    </div> 
+  </section>
+
+  <section class="membership-section">
+    <h2 class="membership-title">Membership Options</h2>
+  
+    <div class="membership-grid">
+      
+      <!-- BI-WEEKLY -->
+      <div class="membership-card">
+        <div>
+          <h3 class="membership-heading">Bi-Weekly</h3>
+          <p class="membership-description">Access our full facility including 24/7 gym access, wet saunas, and more — all for a flexible bi-weekly rate.</p>
+        </div>
+        <div class="space-y-4">
+          <p class="membership-price">$29.99 / Bi-Weekly</p>
+          <a href="#" class="membership-button membership-button-black">Join Now</a>
+        </div>
+      </div>
+  
+      <!-- YEARLY PASS -->
+      <!-- YEARLY PASS - Highlighted (White) -->
+<div class="membership-card membership-card-highlight">
+  <div>
+    <div class="membership-tag">Best Value</div>
+    <h3 class="membership-heading">Yearly Pass</h3>
+    <p class="membership-description">
+      Lock in your rate for the year and avoid price changes. One simple payment
+      for unlimited access.
+    </p>
+  </div>
+  <div class="space-y-4">
+    <p class="membership-price">$729.00 / Year (Paid in Full)</p>
+    <a href="#" class="membership-button membership-button-highlight">Join Now</a>
+  </div>
+</div>
+
+      
+  
+      <!-- UNLIMITED CLASS PASS -->
+      <div class="membership-card">
+        <div>
+          <h3 class="membership-heading">Unlimited Class Pass</h3>
+          <p class="membership-description">Get unlimited access to Hot Yoga, HIIT, Spin, and Grit Fit. Membership activates on your first class.</p>
+        </div>
+        <div class="space-y-4">
+          <p class="membership-price">$165.00 / Monthly</p>
+          <a href="#" class="membership-button membership-button-black">Join Now</a>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+</BaseLayout>
+
+<footer />
+
