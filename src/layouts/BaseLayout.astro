@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/footer.astro';
-const BASE = Astro.base;
+const BASE = import.meta.env.BASE_URL;
 ---
 <html lang="en">
   <head>
@@ -20,12 +20,12 @@ const BASE = Astro.base;
         <!-- Desktop Links -->
         <ul class="hidden md:flex space-x-6 text-white uppercase text-sm">
           <li><a href={BASE}>Home</a></li>
-            <li><a href={`${BASE}hotyoga/`}>Hot Yoga</a></li>
-            <li><a href={`${BASE}membership/`}>Membership</a></li>
-            <li><a href={`${BASE}classes/`}>Classes</a></li>
-            <li><a href={`${BASE}personal-training/`}>Personal Training</a></li>
-            <li><a href={`${BASE}schedules/`}>Schedules</a></li>
-            <li><a href={`${BASE}contact/`}>Contact</a></li>
+          <li><a href={`${BASE}hotyoga/`}>Hot Yoga</a></li>
+          <li><a href={`${BASE}membership/`}>Membership</a></li>
+          <li><a href={`${BASE}classes/`}>Classes</a></li>
+          <li><a href={`${BASE}personal-training/`}>Personal Training</a></li>
+          <li><a href={`${BASE}schedules/`}>Schedules</a></li>
+          <li><a href={`${BASE}contact/`}>Contact</a></li>
         </ul>
         <!-- Desktop Join Button -->
         <div class="hidden md:flex items-center">
