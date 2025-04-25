@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/footer.astro';
+const BASE = Astro.base;
 ---
 <html lang="en">
   <head>
@@ -22,7 +23,7 @@ import Footer from '../components/footer.astro';
           <li><a href={`${BASE}hotyoga/`}>Hot Yoga</a></li>
           <li><a href=#membership>Membership</a></li>
           <li><a href="#classes">Classes</a></li>
-          <li><a href="{`${BASE}personal-training/`}">Personal Training</a></li>
+          <li><a href={`${BASE}personal-training/`}>Personal Training</a>
           <li><a href="#schedules">Schedules</a></li>
           <li><a href="contact">Contact</a></li>
         </ul>
