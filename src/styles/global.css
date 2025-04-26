@@ -53,9 +53,8 @@
 /* at the end of src/styles/global.css */
 
 @media (max-width: 767px) {
-  /* when .menu-open is present on <nav>, make it semi-opaque black */
   nav.menu-open {
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
   }
 }
 
