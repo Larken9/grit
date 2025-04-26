@@ -9,7 +9,26 @@ import Footer from '../components/footer.astro';
     <!-- SITE NAVBAR -->
     <nav class="fixed top-0 left-0 w-full z-30 bg-transparent backdrop-blur-sm">
       <div class="container mx-auto flex items-center justify-between px-8 py-4">
-        <!-- logo, desktop links & hamburger button here -->
+        <!-- your logo -->
+        <a href="/" class="flex-shrink-0">
+          <img src="/images/logo-grit.webp" alt="GritSC Logo" class="h-10 w-auto" />
+        </a>
+
+        <!-- desktop links (shown md+) -->
+        <ul class="hidden md:flex space-x-6 text-white uppercase text-sm">
+          <li><a href="/hotyoga">Hot Yoga</a></li>
+          <li><a href="/membership">Membership</a></li>
+          <!-- …etc… -->
+        </ul>
+
+        <!-- mobile hamburger (shown below md) -->
+        <button
+          class="md:hidden text-white focus:outline-none"
+          aria-label="Open menu"
+          onclick="toggleMobileMenu()"
+        >
+          <svg class="w-6 h-6" /* …your hamburger icon… */></svg>
+        </button>
       </div>
     </nav>
 
@@ -23,7 +42,8 @@ import Footer from '../components/footer.astro';
     <!-- SLIDE-OUT PANEL -->
     <div
       id="mobile-menu"
-      class="fixed inset-y-0 left-0 w-64 h-screen bg-black transform -translate-x-full
+      class="fixed inset-y-0 left-0 w-64 h-screen
+             bg-black transform -translate-x-full
              transition-transform shadow-lg md:hidden z-50"
     >
       <div class="p-6">
@@ -32,17 +52,13 @@ import Footer from '../components/footer.astro';
           aria-label="Close menu"
           onclick="toggleMobileMenu()"
         >
-          <!-- close icon -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" …><path …/></svg>
+          <svg class="w-6 h-6" /* …your close icon… */></svg>
         </button>
         <ul class="space-y-4 uppercase text-white">
           <li><a href="/" onclick="toggleMobileMenu()">Home</a></li>
-          <li><a href="hotyoga/" onclick="toggleMobileMenu()">Hot Yoga</a></li>
-          <li><a href="membership/" onclick="toggleMobileMenu()">Membership</a></li>
-          <li><a href="classes/" onclick="toggleMobileMenu()">Classes</a></li>
-          <li><a href="personal-training/" onclick="toggleMobileMenu()">Personal Training</a></li>
-          <li><a href="schedules/" onclick="toggleMobileMenu()">Schedules</a></li>
-          <li><a href="contact/" onclick="toggleMobileMenu()">Contact</a></li>
+          <li><a href="/hotyoga" onclick="toggleMobileMenu()">Hot Yoga</a></li>
+          <li><a href="/membership" onclick="toggleMobileMenu()">Membership</a></li>
+          <!-- …etc… -->
           <li>
             <a
               href="#join"
@@ -64,14 +80,15 @@ import Footer from '../components/footer.astro';
         const overlay = document.getElementById('mobile-overlay');
         if (!nav || !menu || !overlay) return;
 
-        // toggle dark background on nav (optional)
+        // (optional) darken the nav itself on mobile
         nav.classList.toggle('menu-open');
-        // slide panel
+
+        // slide the panel in/out
         menu.classList.toggle('-translate-x-full');
-        // toggle overlay
+
+        // show/hide the overlay
         overlay.classList.toggle('hidden');
       }
-
       window.toggleMobileMenu = toggleMobileMenu;
     </script>
   </body>
