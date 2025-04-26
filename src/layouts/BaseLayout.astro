@@ -1,66 +1,104 @@
 ---
-// src/layouts/BaseLayout.astro (excerpt)
+// src/layouts/BaseLayout.astro
 import '../styles/global.css';
 import Footer from '../components/footer.astro';
 ---
 <html lang="en">
-  <head>…</head>
+  <head>
+    <!-- your meta tags, title, etc. -->
+  </head>
+
   <body class="font-sans text-gray-900">
-    <nav class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm">
+    <!-- SITE NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full z-30 bg-transparent backdrop-blur-sm">
       <div class="container mx-auto flex items-center justify-between px-8 py-4">
-        <!-- logo, desktop links & hamburger button here -->
-      </div>
+        <!-- Logo -->
+        <a href="/" class="flex-shrink-0">
+          <img src="/images/logo-grit.webp" alt="GritSC Logo" class="h-10 w-auto" />
+        </a>
 
-      <!-- OVERLAY: covers entire screen when menu is open -->
-      <div
-        id="mobile-overlay"
-        class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"
-        onclick="toggleMobileMenu()"
-      ></div>
+        <!-- Desktop Links -->
+        <ul class="hidden md:flex space-x-6 text-white uppercase text-sm">
+          <li><a href="/hotyoga">Hot Yoga</a></li>
+          <li><a href="/membership">Membership</a></li>
+          <li><a href="/classes">Classes</a></li>
+          <li><a href="/personal-training">Personal Training</a></li>
+          <li><a href="/schedules">Schedules</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
 
-      <!-- SLIDE-OUT PANEL -->
-      <div
-        id="mobile-menu"
-        class="fixed top-0 left-0 h-full w-64 bg-black transform -translate-x-full transition-transform shadow-lg md:hidden z-50"
-      >
-        <div class="p-6">
-          <button
-            class="mb-6 text-white focus:outline-none"
-            aria-label="Close menu"
-            onclick="toggleMobileMenu()"
-          >
-            <!-- close icon -->
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" …><path …/></svg>
-          </button>
-          <ul class="space-y-4 uppercase text-white">
-            <li><a href="/" onclick="toggleMobileMenu()">Home</a></li>
-            <li><a href="hotyoga/" onclick="toggleMobileMenu()">Hot Yoga</a></li>
-            <li><a href="membership/" onclick="toggleMobileMenu()">Membership</a></li>
-            <li><a href="classes/" onclick="toggleMobileMenu()">Classes</a></li>
-            <li><a href="personal-training/" onclick="toggleMobileMenu()">Personal Training</a></li>
-            <li><a href="schedules/" onclick="toggleMobileMenu()">Schedules</a></li>
-            <li><a href="contact/" onclick="toggleMobileMenu()">Contact</a></li>
-            <li>
-              <a
-                href="#join"
-                class="block mt-4 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold"
-                onclick="toggleMobileMenu()"
-              >Join Us</a>
-            </li>
-          </ul>
-        </div>
+        <!-- Mobile Hamburger -->
+        <button
+          class="md:hidden text-white focus:outline-none"
+          aria-label="Open menu"
+          onclick="toggleMobileMenu()"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
     </nav>
+
+    <!-- OVERLAY: covers entire screen when menu is open -->
+    <div
+      id="mobile-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"
+      onclick="toggleMobileMenu()"
+    ></div>
+
+    <!-- SLIDE-OUT PANEL -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-y-0 left-0 w-64 h-screen
+             bg-black transform -translate-x-full
+             transition-transform shadow-lg md:hidden z-50"
+    >
+      <div class="p-6">
+        <button
+          class="mb-6 text-white focus:outline-none"
+          aria-label="Close menu"
+          onclick="toggleMobileMenu()"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <ul class="space-y-4 uppercase text-white">
+          <li><a href="/" onclick="toggleMobileMenu()">Home</a></li>
+          <li><a href="/hotyoga" onclick="toggleMobileMenu()">Hot Yoga</a></li>
+          <li><a href="/membership" onclick="toggleMobileMenu()">Membership</a></li>
+          <li><a href="/classes" onclick="toggleMobileMenu()">Classes</a></li>
+          <li><a href="/personal-training" onclick="toggleMobileMenu()">Personal Training</a></li>
+          <li><a href="/schedules" onclick="toggleMobileMenu()">Schedules</a></li>
+          <li><a href="/contact" onclick="toggleMobileMenu()">Contact</a></li>
+          <li>
+            <a
+              href="#join"
+              class="block mt-4 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold"
+              onclick="toggleMobileMenu()"
+            >Join Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <slot />
     <Footer />
 
     <script>
       function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
+        const nav     = document.querySelector('nav');
+        const menu    = document.getElementById('mobile-menu');
         const overlay = document.getElementById('mobile-overlay');
-        if (!menu || !overlay) return;
+        if (!nav || !menu || !overlay) return;
+
+        // optional: darken nav background on mobile
+        nav.classList.toggle('menu-open');
+
+        // slide panel in/out
         menu.classList.toggle('-translate-x-full');
+        // show/hide overlay
         overlay.classList.toggle('hidden');
       }
       window.toggleMobileMenu = toggleMobileMenu;
