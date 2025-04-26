@@ -19,13 +19,21 @@ import Footer from '../components/footer.astro';
 
         <!-- Desktop Links -->
         <ul class="hidden md:flex space-x-6 text-white uppercase text-sm">
-          <li><a href="/hotyoga">Hot Yoga</a></li>
-          <li><a href="/membership">Membership</a></li>
-          <li><a href="/classes">Classes</a></li>
-          <li><a href="/personal-training">Personal Training</a></li>
-          <li><a href="/schedules">Schedules</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/hotyoga" class="hover:text-gray-300">Hot Yoga</a></li>
+          <li><a href="/membership" class="hover:text-gray-300">Membership</a></li>
+          <li><a href="/classes" class="hover:text-gray-300">Classes</a></li>
+          <li><a href="/personal-training" class="hover:text-gray-300">Personal Training</a></li>
+          <li><a href="/schedules" class="hover:text-gray-300">Schedules</a></li>
+          <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
         </ul>
+
+        <!-- Join Us CTA (desktop) -->
+        <a
+          href="#join"
+          class="hidden md:inline-block bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100"
+        >
+          Join Us
+        </a>
 
         <!-- Mobile Hamburger -->
         <button
